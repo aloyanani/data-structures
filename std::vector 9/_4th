@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+
+void foo( std::vector<std::string>& vec , int n)
+{
+    for ( int  i = 0; i < n; ++i)
+    {
+        if (vec[i][0] < 'a' || vec[i][0] > 'z')
+        {
+            std::cout << vec[i] << " ";
+          
+        }
+        else 
+        {
+            vec[i][0] -= ('a' - 'A');
+            std::cout << vec[i] << " ";
+
+        }
+    } 
+}
+int main()
+{
+    std::vector<std::string> v;
+    int n;
+    std::cin >> n;
+    std::string a;
+    for (int i = 0; i < n; ++i)
+    {
+        std::cin >> a;
+        v.push_back(a);
+       
+    }
+     
+    foo(v, n);
+
+    return 0;
+}
