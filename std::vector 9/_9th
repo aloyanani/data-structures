@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+
+long long foo( std::vector<int>& vec , int n)
+{
+    long long sum = 0;
+     for (int i = 0; i < n; ++i) 
+     {
+         int temp = 0;
+        for (int k = 0; k < n; ++k)
+        { 
+            if(k == i)
+            {
+            continue;
+            }
+            else
+            {
+            if (vec[i] == vec[k]) {
+                ++temp;
+            }
+            }
+        }
+        if(temp == 0)
+        {
+        sum += vec[i];
+        }
+    }
+     return sum;
+}
+
+
+int main()
+{
+    std::vector<int> v;
+    int n;
+    std::cin >> n;
+    int a;
+    for (int i = 0; i < n; ++i)
+    {
+        std::cin >> a;
+        v.push_back(a);
+       
+    }
+
+    std::cout<< foo(v, n);
+     return 0;
+}
