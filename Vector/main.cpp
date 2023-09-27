@@ -1,9 +1,9 @@
 #include <iostream>
-#include "vector.h"
-
+//#include "vector.h"
+#include "algoritm.h"
 
 int main(){
-Vector<int> vec(5,2);
+Vector<int> vec(5,3);
 std::cout<<"ani"<<std::endl;
 
 vec.push_back(5);
@@ -31,6 +31,10 @@ std::cout<<vec.front()<<"\n";
 }
   Vector <int>::Iterator an = vec.find(vec.begin(), vec.end(), 2 );
   std::cout<< *an << std::endl;
+  sort(vec.begin(), vec.end());
+  for(int el:vec){
+      std::cout<<el<<" ";
+  }
 // Vector<int> vec_1(5);
 //???? vec_1 = vec; 
 // vec_1.print();
