@@ -39,11 +39,23 @@ int main() {
   std::cout << count(vec.begin(), vec.end(), 3) << std::endl;
   std::cout << max_element(vec.begin(), vec.end())<< std::endl;
   std::cout << min_element(vec.begin(), vec.end())<< std::endl;
+  
   reverse(vec.begin(), vec.end());
     for (int el : vec) {
         std::cout << el << " ";
     }
-  
+  Vector<std::string> vec_1(5, "235");
+  vec_1.push_back("afs");
+  vec_1.push_back("5*#");
+  vec_1.push_back("ashg");
+  vec_1.push_back("sgjs");
+  std::cout << std::endl;
+  vec_1.print();
+  std::cout << std::endl;
+  reverse(vec_1.begin(), vec_1.end());
+    for (std::string el : vec_1) {
+        std::cout << el << " ";
+    }
     // Vector<int> vec_1(5);
     //???? vec_1 = vec; 
     // vec_1.print();
