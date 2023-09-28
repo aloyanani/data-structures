@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+template <typename Iterator>
+bool foo(Iterator begin, Iterator end )
+{
+    sort(begin, end);
+   for (; begin != end; ++begin)
+    {
+        if (*begin - *(begin + 1) != -1)
+        {
+            std::cout << "Elements dont follow each other" << std::endl;
+            return false;
+        }
+        
+    }   
+    std::cout << "Elements follow each other" << std::endl;
+        return true;
+}
+
+
+int main()
+{
+    std::vector<int> v;
+    int n;
+    std::cin >> n;
+    int a;
+    for (int i = 0; i < n; ++i)
+    {
+        std::cin >> a;
+        v.push_back(a);
+    }
+     
+    foo(v.begin(), v.end());
+    for (int i = 0; i < n; ++i)
+    {
+        std::cout << v[i] << " ";
+        
+    }
+    return 0;
+}
