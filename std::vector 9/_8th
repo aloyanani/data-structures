@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+
+int max_subvector(const std::vector<int>& vec) {
+    int max_sum = 0; 
+    int second_sum = 0;
+
+    for (int i = 0; i < vec.size(); i++) {
+        second_sum = std::max(vec[i], second_sum + vec[i]);
+        max_sum = std::max(max_sum, second_sum);
+    }
+
+    return max_sum;
+}
+
+int main() {
+    std::vector<int> v;
+    int size;
+    std::cin >> size;
+    int a;
+    for (int i = 0; i < size; ++i)
+    {
+        std::cin >> a;
+        v.push_back(a);
+    }
+    
+
+   int max_sum = max_subvector(v);
+
+   std::cout << " Max sum is " << max_sum;
+
+    return 0;
+}
