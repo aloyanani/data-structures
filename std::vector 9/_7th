@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+
+void rotate(std::vector<int>& vec, int count_of_rotation)
+{ 
+    int _size = vec.size();
+    std::vector<int>new_vec(_size);
+    for (int i = 0; i < _size; ++i)
+    {
+        new_vec[(i + count_of_rotation) % _size] = vec[i];
+    }
+    vec = new_vec;
+}
+ 
+
+
+int main() {
+    std::vector<int> v;
+    int size, count_of_rotation;
+    std::cin >> size >> count_of_rotation;
+    int a;
+    for (int i = 0; i < size; ++i)
+    {
+        std::cin >> a;
+        v.push_back(a);
+    }
+    rotate(v, count_of_rotation);
+
+    
+    for (int i = 0; i < v.size(); i++)
+    {
+        std::cout << v[i] << " ";
+    }
+
+    return 0;
+}
