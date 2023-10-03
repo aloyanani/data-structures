@@ -1,0 +1,69 @@
+#include <iostream>
+#include <vector>
+bool subvector(const std::vector<char>& vec_1, const std::vector<char>& vec_2) {
+    int k = 0;
+    int temp = 0;
+    for (int i = 0; i < vec_1.size(); )
+    {
+        if (temp >= vec_2.size())
+        {
+            break;
+        }
+        if (vec_2[k] == vec_1[i])
+        {
+            ++k;
+            ++i;
+            ++temp;
+        }
+        else
+        {
+            temp = 0;
+            k = 0;
+            ++i;
+        }
+
+    }
+    if (temp == vec_2.size())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+
+    }
+}
+
+int main() {
+    std::vector<char> v_1;
+    int size_1;
+    std::cout << "The size of the first vector: ";
+    std::cin >> size_1;
+    char a;
+    std::cout << "First vector: ";
+    for (int i = 0; i < size_1; ++i)
+    {
+        std::cin >> a;
+        v_1.push_back(a);
+    }
+
+    std::vector<char> v_2;
+    int size_2;
+    std::cout << "The size of the second svector: ";
+    std::cin >> size_2;
+    std::cout << "Second vector: ";
+    for (int i = 0; i < size_2; ++i)
+    {
+        std::cin >> a;
+        v_2.push_back(a);
+    }
+
+    bool answer = subvector(v_1, v_2);
+    if (answer)
+    {
+        std::cout << "The second vector is a subvector of the first";
+        return 0;
+    }
+    std::cout << "The second vector is not a subvector of the first";
+    return 0;
+}
