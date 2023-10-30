@@ -1,0 +1,35 @@
+#include <iostream>
+#include <list>
+
+int middle(std::list<int> l)
+{
+    int middle_index = (l.size() + 1) / 2;
+    int index = 0;
+    for (int bit : l) {
+        ++index;
+        if (index == middle_index)
+        {
+            return bit;
+        }
+
+    }
+
+}
+
+int main()
+{
+    std::list<int> my_list;
+    for (int i = 1; i <= 4; ++i)
+    {
+
+        my_list.push_back(i);
+    }
+
+
+
+    int middle_element = middle(my_list);
+
+    std::cout << middle_element;
+
+    return 0;
+}
