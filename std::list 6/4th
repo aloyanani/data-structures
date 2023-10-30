@@ -1,0 +1,57 @@
+#include <iostream>
+#include <list>
+
+std::list<int> remove_element(std::list<int> l)
+{
+    auto l_end = l.end();
+    --l_end;
+    for (auto i = l.begin(); i != l_end; )
+    {
+        auto next = std::next(i);
+        if (*i == *next)
+        {
+            i = l.erase(i);
+        }
+        else
+        {
+            ++i;
+
+        }
+
+
+    }
+    return l;
+
+}
+
+int main()
+{
+    std::list<int> my_list;
+    for (int i = 1; i <= 5; ++i)
+    {
+
+        my_list.push_back(i);
+        my_list.push_back(i);
+        my_list.push_back(i);
+    }
+
+   
+
+    for (int bit : my_list)
+    {
+        std::cout << bit << " ";
+
+    }
+    std::cout << std::endl;
+
+
+    my_list = remove_element(my_list);
+
+    for (int bit : my_list)
+    {
+        std::cout << bit << " ";
+
+    }
+
+    return 0;
+}
