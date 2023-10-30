@@ -1,0 +1,30 @@
+#include <iostream>
+#include <list>
+
+int binary_number(std::list<bool> l) {
+    int sum = 0;
+
+    for (bool bit : l) {
+        sum = (sum << 1) | bit;
+    }
+
+    return sum;
+}
+
+int main() {
+    std::list<bool> my_list;
+    for (int i = 1; i <= 3; ++i) {
+        my_list.push_back(1);
+        my_list.push_back(0);
+    }
+
+    // Binary 101010
+
+    int sum = binary_number(my_list);
+    for (bool bit : my_list) {
+        std::cout << bit;
+    }
+    std::cout << "->" << sum;
+
+    return 0;
+}
