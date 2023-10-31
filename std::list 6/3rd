@@ -3,7 +3,7 @@
 
 std::list<int> remove_element(std::list<int> l, int k)
 {
-    for (auto i = l.begin(); i != l.end(); ++i)\
+    for (auto i = l.begin(); i != l.end(); ++i)
     {
         if (*i == k)
         {
