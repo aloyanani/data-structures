@@ -1,0 +1,27 @@
+#include <iostream>
+#include <deque>
+#include <vector>
+
+std::deque<int> addVecToDeq(std::deque<int> deq, const std::vector<int>& vec) {
+    
+    for (const int& element : vec) {
+        deq.push_back(element);
+    }
+
+    return deq;
+}
+
+int main() {
+    std::deque<int> deq = { 1, 2, 3, 4 };
+    std::vector<int> vec = {5, 9,  5, 6, 7 };
+
+    deq = addVecToDeq(deq, vec);
+
+   
+    for (const int& element : deq) {
+        std::cout << element << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
