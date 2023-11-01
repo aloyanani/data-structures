@@ -1,0 +1,36 @@
+#include <iostream>
+#include <deque>
+
+std::deque<int> rangeDeque(std::deque<int>& deq) {
+    std::deque<int> new_deq;
+   
+
+    for (int num : deq) {
+        if (num % 2 == 0) {
+            new_deq.push_back(num);
+        }
+        
+    }
+
+    for (int num : deq) {
+        if (num % 2 != 0) {
+            new_deq.push_back(num);
+        }
+
+    }
+    deq = new_deq;
+
+    return deq;
+}
+
+int main() {
+    std::deque<int> deq = {1, 7, 3, 5, 6 };
+    deq = rangeDeque(deq);
+
+    for (int num : deq) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
