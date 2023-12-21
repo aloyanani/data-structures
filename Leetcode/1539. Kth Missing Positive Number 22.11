@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int findKthPositive(vector<int>& arr, int k) {
+         set<int> myset(arr.begin(), arr.end());
+
+    int missingCount = 0;
+    int i = 1;
+
+    while (missingCount < k) {
+        if (myset.find(i) == myset.end()) {
+            ++missingCount;
+        }
+        if (missingCount < k) {
+            ++i;
+        }
+    }
+
+    return i;
+    }
+};
