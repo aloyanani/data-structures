@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int numJewelsInStones(string jewels, string stones) {
+        std::map<char,int> jewelsmap;
+        std::map<char,int> stonesmap;
+        for(int i = 0; i < jewels.size(); ++i)
+        {
+            jewelsmap[jewels[i]]++;
+        }
+        for(int i = 0; i < stones.size(); ++i)
+        {
+            stonesmap[stones[i]]++;
+        }
+        int temp = 0;
+        for(auto el: jewelsmap)
+        {
+            for(auto num : stonesmap)
+            {
+               if(el.first == num.first)
+               {
+                   temp += num.second;
+               }
+            }
+        }
+
+        return temp;
+    }
+};
